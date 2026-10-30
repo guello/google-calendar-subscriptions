@@ -1,10 +1,10 @@
 <!-- BEGIN VARIABLES -->
-[banner]: https://github.com/gabrielecanepa/google-calendar-subscriptions/blob/main/.github/assets/banner.png?raw=true
-[manage-keys]: https://github.com/gabrielecanepa/google-calendar-subscriptions/blob/main/.github/assets/manage-keys.png?raw=true
+[banner]: https://github.com/guello/google-calendar-subscriptions/blob/main/.github/assets/banner.png?raw=true
+[manage-keys]: https://github.com/guello/google-calendar-subscriptions/blob/main/.github/assets/manage-keys.png?raw=true
 [npm-badge]: https://img.shields.io/npm/v/google-calendar-subscriptions?logo=npm&color=cb3837
-[github-badge]: https://img.shields.io/github/v/release/gabrielecanepa/google-calendar-subscriptions?logo=github&color=f5f5f5
-[ci-badge]: https://img.shields.io/github/actions/workflow/status/gabrielecanepa/google-calendar-subscriptions/validate-commits.yml?color=56aa56
-[types]: https://github.com/gabrielecanepa/google-calendar-subscriptions/blob/main/src/@types/@googleapis/calendar.d.ts
+[github-badge]: https://img.shields.io/github/v/release/guello/google-calendar-subscriptions?logo=github&color=f5f5f5
+[ci-badge]: https://img.shields.io/github/actions/workflow/status/guello/google-calendar-subscriptions/validate-commits.yml?color=56aa56
+[types]: https://github.com/guello/google-calendar-subscriptions/blob/main/src/@types/@googleapis/calendar.d.ts
 <!-- END VARIABLES -->
 
 ![][banner]
@@ -12,8 +12,8 @@
 # Google Calendar Subscriptions
 
 [![][npm-badge]](https://npmjs.com/package/google-calendar-subscriptions)
-[![][github-badge]](https://github.com/gabrielecanepa/google-calendar-subscriptions/pkgs/npm/google-calendar-subscriptions)
-[![][ci-badge]](https://github.com/gabrielecanepa/google-calendar-subscriptions)
+[![][github-badge]](https://github.com/guello/google-calendar-subscriptions/pkgs/npm/google-calendar-subscriptions)
+[![][ci-badge]](https://github.com/guello/google-calendar-subscriptions)
 
 Google Calendar Subscriptions is an npm module that extends the [Google Calendar client](https://github.com/googleapis/google-api-nodejs-client/tree/main/src/apis/calendar) with types and methods to define, manipulate and synchronize calendar subscriptions.
 
@@ -180,9 +180,9 @@ See [`calendar.d.ts`][types].
 Clone the repository using Git or the GitHub CLI:
 
 ```sh
-git clone git@github.com:gabrielecanepa/google-calendar-subscriptions.git
+git clone git@github.com:guello/google-calendar-subscriptions.git
 # or
-gh repo clone gabrielecanepa/google-calendar-subscriptions
+gh repo clone guello/google-calendar-subscriptions
 ```
 
 Install the dependencies with your preferred package manager and activate the Husky hooks:
@@ -195,11 +195,11 @@ npm i
 yarn
 ```
 
-To run the tests, rename `.env.example` to `.env` and fill it with your credentials. Some sample calendars to be used as `TEST_SUBSCRIPTION_URLS` are available [here](https://gist.github.com/gabrielecanepa/5235760f3e2ab3fb7e8a68257d98ae6a).
+To run the tests, rename `.env.example` to `.env` and fill it with your credentials. Some sample calendars to be used as `TEST_SUBSCRIPTION_URLS` are available [here](https://gist.github.com/guello/5235760f3e2ab3fb7e8a68257d98ae6a).
 
 ## Releases
 
-See [changelog](CHANGELOG.md) and [releases](https://github.com/gabrielecanepa/google-calendar-subscriptions/releases).
+See [changelog](CHANGELOG.md) and [releases](https://github.com/guello/google-calendar-subscriptions/releases).
 
 ## License
 

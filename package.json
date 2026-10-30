@@ -1,7 +1,7 @@
 {
   "name": "google-calendar-subscriptions",
   "version": "1.3.0",
-  "description": "Extend the Google Calendar client to allow customizing and syncing calendar subscriptions 📆",
+  "description": "📆 Extend the Google Calendar client to customize and sync calendar subscriptions",
   "keywords": [
     "google",
     "google-calendar",
@@ -12,15 +12,15 @@
     "calendar-subscriptions",
     "calendar-synchronization"
   ],
-  "homepage": "https://github.com/gabrielecanepa/google-calendar-subscriptions#readme",
+  "homepage": "https://github.com/guello/google-calendar-subscriptions#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gabrielecanepa/google-calendar-subscriptions.git"
+    "url": "git+https://github.com/guello/google-calendar-subscriptions.git"
   },
   "bugs": {
-    "url": "https://github.com/gabrielecanepa/google-calendar-subscriptions/issues"
+    "url": "https://github.com/guello/google-calendar-subscriptions/issues"
   },
-  "author": "Gabriele Canepa <contact@gabrielecanepa.com>",
+  "author": "Gabriele Canepa",
   "license": "MIT",
   "type": "commonjs",
   "main": "build/index.js",
