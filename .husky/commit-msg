@@ -7,4 +7,4 @@
 [[ $(cat "$1") =~ ^(# ?)?tmp* ]] && exit 0
 
 # Run commitlint.
-commitlint --edit "$1"
+./node_modules/.bin/commitlint --edit "$1"
