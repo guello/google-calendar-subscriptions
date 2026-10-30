@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/guello/google-calendar-subscriptions/compare/1.3.0...1.3.1) (2026-10-30)
+
+
+### Bug Fixes
+
+* use absolute paths to node modules in git hooks ([8fe6f0b](https://github.com/guello/google-calendar-subscriptions/commit/8fe6f0b5e185fdd7c9d57e88199d0c5ef69a171a))
+
 ## [1.3.0](https://github.com/gabrielecanepa/google-calendar-subscriptions/compare/1.1.1...1.3.0) (2024-05-13)
 
 
