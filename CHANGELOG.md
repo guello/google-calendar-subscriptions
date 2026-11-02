@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/guello/google-calendar-subscriptions/compare/1.3.1...1.3.2) (2026-11-02)
+
+
+### Bug Fixes
+
+* await subscription sync and reject on failed events ([ecb0881](https://github.com/guello/google-calendar-subscriptions/commit/ecb08813abb4ffdc12473a9b0363405b7560fb9c))
+
 ## [1.3.1](https://github.com/guello/google-calendar-subscriptions/compare/1.3.0...1.3.1) (2026-10-30)
 
 
