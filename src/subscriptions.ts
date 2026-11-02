@@ -35,6 +35,7 @@ const syncSubscription = async (
   }
 
   const calendarEvents = fn ? await fn(events) : events
+  const failures: string[] = []
 
   for (const event of calendarEvents) {
     try {
@@ -52,8 +53,14 @@ const syncSubscription = async (
       await calendar.events.update({ calendarId, eventId: event.id, requestBody: event }, ...opts as any)
     } catch (e) {
       console.warn(`⚠️ Failed to sync event ${event.summary}. ${e.message}`)
+      failures.push(`${event.summary}: ${e.message}`)
       continue
     }
+  }
+
+  if (failures.length) {
+    const count = `${failures.length} event${failures.length === 1 ? '' : 's'}`
+    throw new Error(`Failed to sync ${count} of calendar ${summary || calendarId}:\n${failures.join('\n')}`)
   }
 }
 
@@ -67,11 +74,19 @@ const syncSubscriptions = async (
   const [params, ...opts] = args
   const { requestBody, options } = params as calendar_v3.Params$Resource$Subscriptions$Sync
   const subscriptions = requestBody as calendar_v3.Schema$Subscription[]
+  const errors: Error[] = []
 
   for (const subscription of subscriptions) {
     const syncSubscriptionParams = { requestBody: subscription, options }
-    await syncSubscription(calendar, syncSubscriptionParams, ...opts as any)
+    try {
+      await syncSubscription(calendar, syncSubscriptionParams, ...opts as any)
+    } catch (e) {
+      errors.push(e)
+    }
   }
+
+  if (errors.length === 1) throw errors[0]
+  if (errors.length) throw Object.assign(new Error(errors.map(({ message }) => message).join('\n')), { errors })
 }
 
 export const insert = async (
@@ -118,9 +133,8 @@ export const sync = async (
   const [params, ...opts] = args
   const { requestBody: subscription } = params as calendar_v3.Params$Resource$Subscriptions$Sync
 
-  Array.isArray(subscription)
-    ? syncSubscriptions(calendar, params, ...opts as any)
-    : syncSubscription(calendar, params, ...opts as any)
+  if (Array.isArray(subscription)) await syncSubscriptions(calendar, params, ...opts as any)
+  else await syncSubscription(calendar, params, ...opts as any)
 }
 
 export default {
