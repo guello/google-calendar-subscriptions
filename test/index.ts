@@ -9,8 +9,11 @@ const SUBSCRIPTION_URL_NEW = process.env.TEST_SUBSCRIPTION_URL_NEW
 const TIMEOUT = 60_000
 const SCOPES = ['https://www.googleapis.com/auth/calendar']
 
-if (!CLIENT_EMAIL || !PRIVATE_KEY || !SUBSCRIPTION_URL || !SUBSCRIPTION_URL_NEW)
-  throw new Error('missing required environment variables')
+const hasCredentials = Boolean(CLIENT_EMAIL && PRIVATE_KEY && SUBSCRIPTION_URL && SUBSCRIPTION_URL_NEW)
+// Run the integration tests only when the Google test credentials are available.
+const describeIntegration = hasCredentials ? describe : describe.skip
+
+if (!hasCredentials) console.warn('Skipping the integration tests: set the TEST_* environment variables to run them.')
 
 const client = calendar({
   version: 'v3',
@@ -32,7 +35,7 @@ describe('Calendar', () => {
     expect(client.subscriptions).toBeDefined()
   })
 
-  describe('Subscriptions', () => {
+  describeIntegration('Subscriptions', () => {
     let subscription: calendar_v3.Schema$Subscription
     let events: calendar_v3.Schema$Event[]
     
